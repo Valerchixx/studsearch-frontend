@@ -28,6 +28,7 @@ import redesignRoutes from './NEW/index';
 
 import Header from './Components/Header';
 import Footer from './Components/Footer';
+import Offers from './NEW/page/Offers';
 import useUTM from './Helpers/useUTM';
 
 const shouldShowHeader = (url: string) =>
@@ -46,7 +47,7 @@ function App() {
 
     return (
         <Router history={history}>
-            { showHeader && <Header /> }
+            {/* { showHeader && <Header /> } */}
             <Switch>
                 <Route exact path="/" component={MainPage}/>
                 {/* <Route exact path="/students" component={StudentsPage}/> */}
@@ -68,7 +69,7 @@ function App() {
 
                 <Route component={Page404} />
             </Switch>
-            { showHeader && <Footer /> }
+            {/* { showHeader && <Footer /> } */}
         </Router>
     );
 }
