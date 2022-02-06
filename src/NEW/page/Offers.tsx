@@ -1,9 +1,9 @@
 import React from "react";
 import './offers.css'
-import Card from "./component/Card";
+import OfferCard from "./component/Card";
 
 
-function Offers(){
+const  OffersPage = ()  =>{
 
     const arr = [
         {phrase:"Інженерія програмного забезпечення...",
@@ -39,10 +39,10 @@ function Offers(){
 ]
     return(
         <div>
-            {arr.map((item) => <Card phrase={item.phrase} title={item.title} desc={item.description} mark={item.mark} />)}
+            {arr.map((item) => <OfferCard phrase={item.phrase} title={item.title} desc={item.description} mark={item.mark} />)}
 
         </div>
     )
 }
 
-export default Offers
+export default OffersPage
