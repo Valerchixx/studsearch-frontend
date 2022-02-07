@@ -1,15 +1,4 @@
 
-
-i {
-    border: solid #9DA3A7;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 7px;
-}
-.left {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-}
 .header{
     font-size: 30px;
     color: #000;
@@ -30,15 +19,14 @@ i {
     padding: 25px;
 }
 
-.up {
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-    padding: 5px;
-}
 
 .wrapH{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 15px 0;
+}
+.viewMore{
+    color: #0B1922;
     padding: 15px 0;
 }
