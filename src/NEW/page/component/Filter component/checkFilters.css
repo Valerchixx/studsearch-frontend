@@ -6,11 +6,6 @@
 .wrapFirst{
     padding-bottom: 10px;
 }
-
-
-
-
-
 input[type="checkbox"]:checked,
 input[type="checkbox"]:not(:checked){
   position: absolute;
@@ -46,11 +41,7 @@ input[type="checkbox"]:not(:checked) + label:before{
   height: 18px;
   border: 1px solid #9DA3A7;
   background-color: #ffffff;
-
-
 }
-
-
 
 input[type="checkbox"]:checked + label:before,
 input[type="checkbox"]:not(:checked) + label:before {
@@ -61,8 +52,6 @@ input[type="checkbox"]:checked + label:after,
 input[type="checkbox"]:not(:checked) + label:after{
   content: "";
   position: absolute;
-
-
 }
 input[type="checkbox"]:checked + label:after,
 input[type="checkbox"]:not(:checked) + label:after {
