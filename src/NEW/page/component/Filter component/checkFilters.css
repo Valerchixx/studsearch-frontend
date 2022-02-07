@@ -53,20 +53,15 @@ input[type="checkbox"]:not(:checked) + label:after{
   content: "";
   position: absolute;
 }
-input[type="checkbox"]:checked + label:after,
-input[type="checkbox"]:not(:checked) + label:after {
-    left: 3px;
-    top: 4px;
-    width: 10px;
-    height: 5px;
-    border-radius: 1px;
-    border-left: 3px solid #ffffff;
-    border-bottom: 3px solid #ffffff;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+
+
+.check:checked+label::before {
+  border-color: #0b76ef;
+  background-color: #0b76ef;
+  background-image: url('./checkMark.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px;
 }
 
 input[type="checkbox"]:not(:checked) + label:after{

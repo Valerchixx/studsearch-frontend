@@ -3,6 +3,8 @@ import styles from './filters.module.css';
 import FiltersBlock from "./component/Filter component/FiltersBLock";
 import HeaderFilter from "./component/Filter component/Header";
 import CheckFilters from "./component/Filter component/CheckFilters";
+import arrowUp from './component/Filter component/arrowRight.svg';
+import arrowRight from './component/Filter component/arrowUp.svg'
 
 
 const  Filters  = (props:any) =>{
@@ -10,7 +12,7 @@ const  Filters  = (props:any) =>{
         <div className={styles.wrapS}>
             <div className={styles.wrapHeader}>
             <div className={styles.wrap1}>
-            <i className={styles.left}></i>
+            <img src={arrowRight} alt="" />
             <h3 className={styles.header}>Фільтри</h3>
             </div>
             <div className={styles.wrap2}>
@@ -23,7 +25,7 @@ const  Filters  = (props:any) =>{
                <HeaderFilter title='Освітній рівень'/>
                </div>
                <div>
-               <i className={styles.up}></i>
+               <img src={arrowUp} alt="" />
                </div>
                </div>
                <div className={styles.wrapCheck}>
