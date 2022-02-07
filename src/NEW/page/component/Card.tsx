@@ -1,28 +1,28 @@
 import React from "react";
-import './card.css'
+import  styles from'./card.module.css'
 import bookMark from './bookMark.svg'
 
-const OfferCard = (props:any) =>{
+const OfferCard = (props:{title:string,phrase:string,desc:string,mark:string}) =>{
 
 
     return(
-        <div className="wrapper">
-            <div className="wrap">
-            <div className="wrapSpecial">
-                <div className="headers">
-                <h3 className="count">121 &#183;</h3>
+        <div className={styles.wrapper}>
+            <div className={styles.wrap}>
+            <div className={styles.wrapSpecial}>
+                <div className={styles.headers}>
+                <h3 className={styles.count}>121 &#183;</h3>
                 <h3>🏛 КПІ &#183;</h3>
                 <h3>🎓 ФІОТ</h3>
                 </div>
-                <div className="imgMark">
-                <img className="imgSac" src={bookMark} alt="img" />
+                <div className={styles.imgMark}>
+                <img className={styles.imgSac} src={bookMark} alt="img" />
                 </div>
                 </div>
-                <p className="special">{props.phrase}</p>
-                <p className="title">{props.title}</p>
-                <div className="wrapDesc">
-                 <h5 className="mark">{props.mark}</h5>
-                 <p className="desc">{props.desc}</p>
+                <p className={styles.special}>{props.phrase}</p>
+                <p className={styles.title}>{props.title}</p>
+                <div className={styles.wrapDesc}>
+                 <h5 className={styles.mark}>{props.mark}</h5>
+                 <p className={styles.desc}>{props.desc}</p>
                 </div>
                 </div>
         </div>

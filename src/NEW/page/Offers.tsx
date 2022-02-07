@@ -1,5 +1,5 @@
 import React from "react";
-import './offers.css'
+import styles from './offers.module.css'
 import OfferCard from "./component/Card";
 
 
@@ -38,7 +38,7 @@ const  OffersPage = ()  =>{
        }
 ]
     return(
-        <div>
+        <div className={styles.wrapOffer}>
             {arr.map((item) => <OfferCard phrase={item.phrase} title={item.title} desc={item.description} mark={item.mark} />)}
 
         </div>
