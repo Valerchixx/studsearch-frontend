@@ -30,3 +30,40 @@
     color: #0B1922;
     padding: 15px 0;
 }
+.btn{
+    border: 2px solid #3C474E ;
+    background-color: transparent;
+    padding: 15px 70px;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 14px;
+    border-radius: 9px;
+
+
+}
+.btnWrap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+.btnShowWrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnShow{
+    font-size: 16px;
+    line-height: 18px;
+    color: #fff;
+    border-radius: 9px;
+    font-weight: 600;
+    background-color: #3C474E;
+    border: none;
+    padding: 20px 40px;
+}
+.whiteWrap{
+    background-color: #fff;
+    padding: 20px;
+}

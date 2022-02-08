@@ -1,5 +1,5 @@
 import React from "react";
-import styles from './filtersBlock.module.css'
+import styles from './css/filtersBlock.module.css'
 
 const FiltersBlock = (props:any) =>{
     return(

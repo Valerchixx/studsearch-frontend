@@ -1,6 +1,6 @@
 import React from "react";
 import  styles from'./card.module.css'
-import bookMark from './bookMark.svg'
+import bookMark from './Filter component/svg/bookMark.svg'
 
 const OfferCard = (props:{title:string,phrase:string,desc:string,mark:string}) =>{
 

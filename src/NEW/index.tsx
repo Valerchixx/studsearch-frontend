@@ -7,9 +7,9 @@ import Filters from './page/Filters';
 import PersonalArea from '../Pages/PersonalArea/PersonalArea';
 
 const redesignRoutes = <>
-  <Route path="/myrating/:page?" component={MyRatingApp} />
-  <Route path="/myoffers/" component={Offers} />
-  <Route path="/myfilters/" component={Filters} />
+  <Route  path="/myrating/:page?" component={MyRatingApp} />
+  <Route exact path="/myoffers/" component={Offers} />
+  <Route exact path="/myoffers/filters" component={Filters} />
 </>
 
 export default redesignRoutes;

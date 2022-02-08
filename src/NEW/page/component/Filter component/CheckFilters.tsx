@@ -1,18 +1,31 @@
 import React from "react";
-import './checkFilters.css'
+import styles from './css/checkFilters.module.css';
+import checkMark from './svg/checkMark.svg';
 
 const CheckFilters = (props:any) =>{
     return(
-        <div className="wrapr">
-        <div className="wrapFirst">
-            <input type="checkbox" name="level1" id="level1" className="check" />
-            <label className="labelCheck" htmlFor="level1">Бакалавр (після 11 класів)</label>
+        <div className={styles.wrapper}>
+        <label className={styles.labelCheckbox}>
+            <input type="checkbox"  className={styles.inputCheckBox} />
+            <div className={styles.checkbox}>
+                <img className={styles.mark} src={checkMark} alt="" />
             </div>
-            <div className="wrapSecond">
-            <input type="checkbox" disabled name="level2" id="level2" className="check" />
-            <label className="labelCheckDisable"  htmlFor="level1">Магістр (в розробці)</label>
-        </div>
-        </div>
+            <div>
+           <div  className={styles.title}>Бакалавр (після 11 класів)</div>
+            </div>
+
+        </label>
+        <label className={styles.labelCheckbox}>
+            <input type="checkbox"disabled  className={styles.inputCheckBox} />
+            <div className={styles.checkbox}>
+                <img className={styles.mark} src={checkMark} alt="" />
+            </div>
+            <div>
+           <div  className={styles.titleDis}>Магістр (в розробці)</div>
+            </div>
+
+        </label>
+     </div>
     )
 }
 
