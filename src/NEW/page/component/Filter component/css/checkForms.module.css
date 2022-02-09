@@ -2,12 +2,14 @@
 .wrap{
     font-family: 'Inter', sans-serif;
     font-size: 14px;
-    padding: 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EDEDED;
 
 }
 .customCheckBox{
     display: flex;
     align-items: center;
+    padding: 5px 0;
 }
 
 .hiddenCheckbox{
@@ -37,9 +39,8 @@
     background-color: #9DA3A7;
 }
 .text{
-    padding-top: 16px;
+    padding-top: 12px;
     font-weight: 500;
-    padding-bottom: 5px;
 }
 .descr{
   font-size: 10px;
