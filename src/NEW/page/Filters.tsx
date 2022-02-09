@@ -47,8 +47,8 @@ const  Filters  = (props:any) =>{
            <FiltersBlock>
              <HeaderFilter  title='Галузь та спеціальність'/>
             {blinds.map((item)=> <BlindsFilter  title={item}/>)}
-            <h3 onClick={open} className={styles.viewMore }>Показати ще 17</h3>
-            { flag && blinds.map((item)=> <BlindsFilter  title={item}/>)}
+            <div>{flag ? blinds.map((item)=> <BlindsFilter  title={item}/>):<h3 onClick={open} className={styles.viewMore }>Показати ще 17</h3>}</div>
+            {/* { flag && blinds.map((item)=> <BlindsFilter  title={item}/>)} */}
            </FiltersBlock>
 
            <FiltersBlock>
