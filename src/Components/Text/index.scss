@@ -1,9 +1,10 @@
 @import '../../palette';
 
-h1, h2, h3, h4, h5, h6, p,
+h1, h2, h3, h4, h5, h6, p
 ul, li,
 button, input {
   font-family: 'Montserrat', sans-serif;
+  // font-family: 'Inter', sans-serif;
   color: $black;
 }
 h1, h2, h3, h4, h5, h6, p {
@@ -11,7 +12,7 @@ h1, h2, h3, h4, h5, h6, p {
   display: inline-block;
 }
 
-h1 { 
+h1 {
   font-weight: 600;
   font-size: 40px;
   color: $black;

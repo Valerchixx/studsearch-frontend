@@ -2,6 +2,7 @@
 .header{
     font-size: 30px;
     color: #000;
+    padding-left: 15px;
 
 }
 .clear{
@@ -9,7 +10,9 @@
     font-size: 14px;
     font-weight: 700;
 }
-
+.wrapS{
+    font-family: 'Inter', sans-serif;
+}
 
 .wrapHeader{
     display: flex;
@@ -29,6 +32,7 @@
 .viewMore{
     color: #0B1922;
     padding: 15px 0;
+    cursor: pointer;
 }
 .btn{
     border: 2px solid #3C474E ;

@@ -2,6 +2,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 5px ;
-    border-bottom: 1px solid #EDEDED;
+    padding: 10px 5px ;
+    font-family: 'Inter', sans-serif;
+}
+.wrapper{
+      border-bottom: 1px solid #EDEDED;
+
+}
+.rotate{
+    transform: rotate(90deg);
+    transition: 0.2s all;
+}
+.arrow{
+    transition: 0.2s all;
+    transform: rotate(0deg);
 }
