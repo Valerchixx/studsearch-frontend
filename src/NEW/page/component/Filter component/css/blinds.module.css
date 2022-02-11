@@ -5,6 +5,7 @@
     padding: 15px 5px ;
     font-family: 'Inter', sans-serif;
     font-size: 14px;
+
 }
 .wrapper{
       border-bottom: 1px solid #EDEDED;
@@ -17,4 +18,10 @@
 .arrow{
     transition: 0.2s all;
     transform: rotate(0deg);
+}
+.parag{
+    font-weight: bold;
+}
+.id{
+    color: #9DA3A7;;
 }

@@ -6,6 +6,9 @@
     border-bottom: 1px solid #EDEDED;
 
 }
+.wrap:last-child{
+    border-bottom: none;
+}
 .customCheckBox{
     font-family: 'Inter', sans-serif;
     display: flex;

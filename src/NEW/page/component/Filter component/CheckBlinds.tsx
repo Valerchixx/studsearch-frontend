@@ -10,7 +10,7 @@ const CheckBlinds = (props:any) =>{
                 <img className={styles.mark} src={checkMark} alt="" />
             </div>
             <div>
-            {props.text}
+          <span className={styles.id}>{`(${props.id})`}</span>  {`${props.emoji} ${props.text}`}
             </div>
         </label>
      </div>
