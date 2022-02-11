@@ -15,12 +15,12 @@ const BlindsFilter = (props:any) =>{
     }
     return(
         <div className={styles.wrapper}>
-        <div className={styles.wrapBlinds}>
+        <div onClick={open} className={styles.wrapBlinds}>
             <div>
                 <p >{props.title}</p>
             </div>
             <div>
-                <img onClick={open} className={flag.flag ? styles.rotate : styles.arrow} src={arrowLeft} alt="" />
+                <img className={flag.flag ? styles.rotate : styles.arrow} src={arrowLeft} alt="" />
             </div>
 
         </div>
