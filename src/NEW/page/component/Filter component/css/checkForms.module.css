@@ -9,12 +9,14 @@
 .wrap:last-child{
     border-bottom: none;
 }
+
 .customCheckBox{
     font-family: 'Inter', sans-serif;
     display: flex;
     align-items: center;
     padding: 5px 0;
 }
+
 
 .hiddenCheckbox{
     opacity: 0;

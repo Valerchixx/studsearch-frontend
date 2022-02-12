@@ -198,11 +198,11 @@ const  Filters  = (props:any) =>{
             }]
         },
         {
-            "id": 6,
+            "id": 0o6,
             "name": "Журналістика",
             "emoji": "📰",
             "specialities":[{
-                "code": 61,
+                "code": 0o61,
                 "name": "Журналістика",
                 "emoji": "📰",
                 "field_id": 6
@@ -875,6 +875,16 @@ const  Filters  = (props:any) =>{
         {type:"За балами вступників (від нищих)",descr:"Де вчаться студенти з в середньому гіршими балами ЗНО"},
         {type:"За шансами вступити з твоїми балами",descr:"Вираховуємо твій бал для кожної конкурсної пропозиції та порівнюємо з прохідними балами минулих років"}
     ]
+    const [opens,setOpens] = useState({
+        open1:true,
+        open2:true,
+        open3:true,
+        open4:true,
+        open5:true,
+        open6:true,
+    });
+
+
     function open(){
         setflag(true)
     }
@@ -890,34 +900,40 @@ const  Filters  = (props:any) =>{
             </div>
             </div>
            <FiltersBlock >
-               <HeaderFilter title='Освітній рівень' />
+               <HeaderFilter title='Освітній рівень' open={() => setOpens({...opens, open1:!opens.open1})} />
                <div className={styles.wrapCheck}>
-               <CheckFilters  />
+             { opens.open1 && <CheckFilters  />}
                </div>
            </FiltersBlock>
            <FiltersBlock>
-             <HeaderFilter  title='Галузь та спеціальність'/>
+             <HeaderFilter  title='Галузь та спеціальність' open={() => setOpens({...opens, open2:!opens.open2})}/>
+            { opens.open2 && <div>
              {blinds.slice(0,12).map((item)=> <BlindsFilter  id={item.id} title={item.name} emoji={item.emoji} special={item.specialities}/>)}
             <div>{flag ? blinds.slice(12,29).map((item)=> <BlindsFilter id={item.id} emoji={item.emoji} special={item.specialities} title={item.name}/>):<h3 onClick={open} className={styles.viewMore }>Показати ще 17</h3>}</div>
+                   </div>}
            </FiltersBlock>
 
            <FiltersBlock>
-               <HeaderFilter title='Регіон' />
-               {towns.map((item) => <CheckTowns text={item}/>)}
+               <HeaderFilter title='Регіон' open={() => setOpens({...opens, open3:!opens.open3})} />
+               { opens.open3 && towns.map((item) => <CheckTowns text={item}/>)}
            </FiltersBlock>
            <FiltersBlock>
-               <HeaderFilter title='Форма навчання' />
-               {forms.map((item) => <CheckForms text={item.form} descr={item.descr}/>)}
+               <HeaderFilter title='Форма навчання' open={() => setOpens({...opens, open4:!opens.open4})} />
+               {opens.open4 &&  forms.map((item) => <CheckForms text={item.form} descr={item.descr}/>)}
            </FiltersBlock>
            <FiltersBlock>
-               <HeaderFilter title='Бюджет чи контракт' />
-               <FilterCheck text='Тільки бюджет'/>
+               <HeaderFilter title='Бюджет чи контракт' open={() => setOpens({...opens, open5:!opens.open5})} />
+              { opens.open5 && <FilterCheck text='Тільки бюджет'/>}
            </FiltersBlock>
            <FiltersBlock>
-               <HeaderFilter title='Сортувати' />
-               {types.map((item) => <CheckForms text={item.type}  descr={item.descr}/>)}
-               <div className={styles.btnWrap}>
-               <button className={styles.btn}>Ввести бали ЗНО та атестату</button>
+               <HeaderFilter title='Сортувати' open={() => setOpens({...opens, open6:!opens.open6})}/>
+               <div>
+
+                 { opens.open6 && <><div>
+                        {types.map((item) => <CheckForms text={item.type} descr={item.descr} />)}
+                    </div><div className={styles.btnWrap}>
+                            <button className={styles.btn}>Ввести бали ЗНО та атестату</button>
+                        </div></>}
                </div>
            </FiltersBlock>
            <div className={styles.whiteWrap}>
