@@ -5,17 +5,18 @@
     padding: 15px 5px ;
     font-family: 'Inter', sans-serif;
     font-size: 14px;
+    cursor: pointer;
 
 }
 .wrapper{
       border-bottom: 1px solid #EDEDED;
 
 }
-.rotate{
+.arrowLeft.rotate{
     transform: rotate(90deg);
     transition: 0.2s all;
 }
-.arrow{
+.arrowLeft.arrowClose{
     transition: 0.2s all;
     transform: rotate(0deg);
 }

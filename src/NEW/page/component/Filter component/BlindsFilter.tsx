@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from'./css/blinds.module.css'
 import arrowLeft from './svg/arrowLeft.svg';
-import CheckTowns from "./CheckTown";
 import CheckBlinds from "./CheckBlinds";
 const BlindsFilter = (props:{title:string,id:number,emoji:string,special:{ code: number; name: string; emoji: string; field_id: number; }[]}) =>{
     const [flag,setFlag] = useState({flag:false})
@@ -18,7 +17,7 @@ const BlindsFilter = (props:{title:string,id:number,emoji:string,special:{ code:
                 <p className={styles.parag} >{` ${props.emoji} ${props.title}`}</p> <span className={styles.id}>{`(${props.id})`}</span>
             </div>
             <div>
-                <img className={flag.flag ? styles.rotate : styles.arrow} src={arrowLeft} alt="" />
+                <img className={flag.flag ?`${styles.arrowLeft} ${styles.rotate}`  : `${styles.arrowLeft} ${styles.arrowClose}`} src={arrowLeft} alt="" />
             </div>
 
         </div>

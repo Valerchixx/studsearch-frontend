@@ -74,3 +74,6 @@
 .none{
     display: none;
 }
+.viewMoreReg{
+    cursor: pointer;
+}

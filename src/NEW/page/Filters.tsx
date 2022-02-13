@@ -8,10 +8,11 @@ import BlindsFilter from "./component/Filter component/BlindsFilter";
 import CheckTowns from "./component/Filter component/CheckTown";
 import CheckForms from "./component/Filter component/CheckForms";
 import FilterCheck from "./component/Filter component/FilterCheck";
+import { H3 } from "../../Components/Text";
 
 
 const  Filters  = (props:any) =>{
-    const [flag,setflag] = useState(false)
+    const [flag,setflag] = useState({flag1:false,flag2:false})
     const blinds = [
         {
             "id": 1,
@@ -885,8 +886,17 @@ const  Filters  = (props:any) =>{
     });
 
 
-    function open(){
-        setflag(true)
+    function openBranch(){
+        setflag({
+            ...flag,
+            flag1:true
+        })
+    }
+    function openRegion(){
+        setflag({
+            ...flag,
+            flag2:true
+        })
     }
     return(
         <div className={styles.wrapS}>
@@ -907,15 +917,29 @@ const  Filters  = (props:any) =>{
            </FiltersBlock>
            <FiltersBlock>
              <HeaderFilter  title='Галузь та спеціальність' open={() => setOpens({...opens, open2:!opens.open2})}/>
-            { opens.open2 && <div>
-             {blinds.slice(0,12).map((item)=> <BlindsFilter  id={item.id} title={item.name} emoji={item.emoji} special={item.specialities}/>)}
-            <div>{flag ? blinds.slice(12,29).map((item)=> <BlindsFilter id={item.id} emoji={item.emoji} special={item.specialities} title={item.name}/>):<h3 onClick={open} className={styles.viewMore }>Показати ще 17</h3>}</div>
-                   </div>}
+            { opens.open2 && <div>{blinds.slice(0,5).map((item)=>
+             <BlindsFilter
+             id={item.id}
+             title={item.name}
+             emoji={item.emoji}
+             special={item.specialities}/>)}
+
+            <div>{flag.flag1 ? blinds.slice(5,29).map((item)=>
+             <BlindsFilter
+             id={item.id}
+             emoji={item.emoji}
+             special={item.specialities}
+             title={item.name}/>):
+            <h3 onClick={openBranch} className={styles.viewMore }>Показати ще 24</h3>}</div>
+            </div>}
            </FiltersBlock>
 
            <FiltersBlock>
                <HeaderFilter title='Регіон' open={() => setOpens({...opens, open3:!opens.open3})} />
-               { opens.open3 && towns.map((item) => <CheckTowns text={item}/>)}
+               { opens.open3 && towns.slice(0,5).map((item) => <CheckTowns text={item}/>)}
+               <div>{flag.flag2 ? towns.slice(5,9).map((item) => <CheckTowns text={item}/>):
+                <h3 onClick={openRegion} className={styles.viewMoreReg }>Показати ще 4</h3> }</div>
+
            </FiltersBlock>
            <FiltersBlock>
                <HeaderFilter title='Форма навчання' open={() => setOpens({...opens, open4:!opens.open4})} />
