@@ -983,14 +983,14 @@ const  Filters  = (props:any) =>{
                           text={item.type} descr={item.descr} />)}
                     </div>
                     <div className={styles.btnWrap}>
-                    <button onClick={openedPopUp} className={styles.btn}>Ввести бали ЗНО та атестату</button>
+                    <button  className={styles.btn}>Ввести бали ЗНО та атестату</button>
                      <PopUpFilter close={() => setOpenPopUp(false)} openModal={openPopUp} />
                     </div></>}
                </div>
            </FiltersBlock>
            <div className={styles.whiteWrap}>
                <div className={styles.btnShowWrap}>
-                   <button  className={styles.btnShow}>Показати результати (100500)</button>
+                   <button onClick={openedPopUp} className={styles.btnShow}>Показати результати (100500)</button>
                </div>
            </div>
         </div>
