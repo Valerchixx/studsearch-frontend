@@ -6,7 +6,7 @@ const CheckForms = (props: any) => {
     return (
         <div className={styles.wrap}>
             <label className={styles.customCheckBox}>
-                <input type="checkbox" className={styles.hiddenCheckbox} />
+                <input type="checkbox" id={props.id} checked={props.checked} onChange={props.onChange} className={styles.hiddenCheckbox} />
                 <div className={styles.checkbox}>
                     <img className={styles.mark} src={checkMark} alt="" />
                 </div>

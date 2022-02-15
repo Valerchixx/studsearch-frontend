@@ -3,7 +3,7 @@ import styles from './css/checkBlinds.module.css'
 import checkMark from './svg/checkMark.svg'
 const CheckBlinds = (props:any) =>{
     return(
-        <div className={styles.wrap}>
+        <div key={props.id} className={styles.wrap}>
         <label className={styles.customCheckbox}>
             <input type="checkbox"  className={styles.hiddenCheckbox} />
             <div className={styles.checkbox}>

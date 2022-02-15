@@ -8,7 +8,7 @@ import BlindsFilter from "./component/Filter component/BlindsFilter";
 import CheckTowns from "./component/Filter component/CheckTown";
 import CheckForms from "./component/Filter component/CheckForms";
 import FilterCheck from "./component/Filter component/FilterCheck";
-import { H3 } from "../../Components/Text";
+import PopUpFilter from "./component/Filter component/PopUpFilter";
 
 
 const  Filters  = (props:any) =>{
@@ -885,19 +885,40 @@ const  Filters  = (props:any) =>{
         open6:true,
     });
 
-
     function openBranch(){
         setflag({
             ...flag,
             flag1:true
-        })
+        });
     }
     function openRegion(){
         setflag({
             ...flag,
             flag2:true
-        })
+        });
     }
+
+    const [openPopUp, setOpenPopUp] = useState(false)
+
+    const [checkedState, setCheckedState] = useState(
+        new Array(types.length).fill(false)
+      );
+
+      console.log( checkedState.join(' '))
+
+     const handleOnChange = (position:any) => {
+        setCheckedState(state => state.map((b, i) => i === position ? !b : b));
+    }
+
+    function openedPopUp(){
+        if(checkedState[2]){
+            setOpenPopUp(true)
+        }
+
+    }
+
+
+
     return(
         <div className={styles.wrapS}>
             <div className={styles.wrapHeader}>
@@ -912,7 +933,7 @@ const  Filters  = (props:any) =>{
            <FiltersBlock >
                <HeaderFilter title='Освітній рівень' open={() => setOpens({...opens, open1:!opens.open1})} />
                <div className={styles.wrapCheck}>
-             { opens.open1 && <CheckFilters  />}
+               {opens.open1 && <CheckFilters  />}
                </div>
            </FiltersBlock>
            <FiltersBlock>
@@ -939,30 +960,37 @@ const  Filters  = (props:any) =>{
                { opens.open3 && towns.slice(0,5).map((item) => <CheckTowns text={item}/>)}
                <div>{flag.flag2 ? towns.slice(5,9).map((item) => <CheckTowns text={item}/>):
                 <h3 onClick={openRegion} className={styles.viewMoreReg }>Показати ще 4</h3> }</div>
-
            </FiltersBlock>
+
            <FiltersBlock>
                <HeaderFilter title='Форма навчання' open={() => setOpens({...opens, open4:!opens.open4})} />
                {opens.open4 &&  forms.map((item) => <CheckForms text={item.form} descr={item.descr}/>)}
            </FiltersBlock>
+
            <FiltersBlock>
                <HeaderFilter title='Бюджет чи контракт' open={() => setOpens({...opens, open5:!opens.open5})} />
               { opens.open5 && <FilterCheck text='Тільки бюджет'/>}
            </FiltersBlock>
+
            <FiltersBlock>
                <HeaderFilter title='Сортувати' open={() => setOpens({...opens, open6:!opens.open6})}/>
                <div>
-
                  { opens.open6 && <><div>
-                        {types.map((item) => <CheckForms text={item.type} descr={item.descr} />)}
-                    </div><div className={styles.btnWrap}>
-                            <button className={styles.btn}>Ввести бали ЗНО та атестату</button>
-                        </div></>}
+                        {types.map((item,index) =>
+                        <CheckForms key={index}
+                          id={index} onChange={() => handleOnChange(index)}
+                          checked={checkedState[index]}
+                          text={item.type} descr={item.descr} />)}
+                    </div>
+                    <div className={styles.btnWrap}>
+                    <button onClick={openedPopUp} className={styles.btn}>Ввести бали ЗНО та атестату</button>
+                     <PopUpFilter close={() => setOpenPopUp(false)} openModal={openPopUp} />
+                    </div></>}
                </div>
            </FiltersBlock>
            <div className={styles.whiteWrap}>
                <div className={styles.btnShowWrap}>
-                   <button className={styles.btnShow}>Показати результати (100500)</button>
+                   <button  className={styles.btnShow}>Показати результати (100500)</button>
                </div>
            </div>
         </div>
