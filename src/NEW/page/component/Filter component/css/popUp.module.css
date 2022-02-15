@@ -22,8 +22,11 @@
     max-height: 400px;
     max-width: 300px;
     transition: .4s all;
-    padding-bottom: 20px;
     transform: scale(0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -37,7 +40,7 @@
 .headWrap{
     display: flex;
     align-items: flex-start;
-    padding-top: 20px;
+
 }
 .headWrap h1{
     color: #000;
@@ -47,7 +50,7 @@
 }
 
 .descrWrap{
-    width: 310px;
+    width: 100%;
     padding-top: 20px;
 }
 .btnWrapper{
@@ -59,7 +62,7 @@
     font-family: 'Inter', sans-serif;
     color: #fff;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     background: #0B1922;
     border-radius: 9px;
     padding: 20px 40px;
@@ -83,10 +86,6 @@
         width: 250px;
         height: 350px;
     }
-    .descrWrap{
-        max-width: 250px;
-
-    }
     .descrWrap p{
         padding-bottom: 10px;
         font-size: 14px;
@@ -97,7 +96,5 @@
     .btn{
         padding: 10px 30px;
     }
-    .headWrap{
-        padding-top: 10px;
-    }
+
 }

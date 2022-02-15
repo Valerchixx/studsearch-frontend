@@ -911,14 +911,12 @@ const  Filters  = (props:any) =>{
     }
 
     function openedPopUp(){
-        if(checkedState[2]){
+        if(checkedState[2] && balZno){
             setOpenPopUp(true)
         }
 
     }
-
-
-
+    const balZno = true
     return(
         <div className={styles.wrapS}>
             <div className={styles.wrapHeader}>
